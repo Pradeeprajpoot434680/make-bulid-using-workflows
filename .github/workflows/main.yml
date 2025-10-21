@@ -11,14 +11,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5.0.0
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v6.0.0
         with:
           node-version: '22.x'
       
+      - name: Change directory to frontend
+        run: cd react-app  # Change this to the path where your package.json is located
+      
       - name: Install dependencies
         run: npm install
-      
+
       - name: Build React app
         run: npm run build
